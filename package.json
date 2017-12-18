@@ -4,6 +4,9 @@
   "description": "My freeCodeCamp algorithm solutions",
   "main": "index.js",
   "scripts": {
+    "test:basic": "ava basic/*.test.js --verbose",
+    "test:intermediate": "ava intermediate/*.test.js --verbose",
+    "test:advanced": "ava advanced/*.test.js --verbose",
     "test": "ava --verbose --watch"
   },
   "ava": {
