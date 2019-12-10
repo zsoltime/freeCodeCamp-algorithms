@@ -4,10 +4,12 @@
   "private": true,
   "description": "My freeCodeCamp algorithm solutions",
   "scripts": {
-    "test:basic": "ava basic/*.test.js --verbose",
-    "test:intermediate": "ava intermediate/*.test.js --verbose",
+    "format": "prettier --write \"**/*.js\"",
+    "lint": "eslint advanced basic intermediate",
+    "test": "ava --verbose --watch",
     "test:advanced": "ava advanced/*.test.js --verbose",
-    "test": "ava --verbose --watch"
+    "test:basic": "ava basic/*.test.js --verbose",
+    "test:intermediate": "ava intermediate/*.test.js --verbose"
   },
   "keywords": [
     "freecodecamp"
@@ -28,7 +30,10 @@
     "ava": "^2.4.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2"
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.19.1"
   },
   "ava": {
     "require": [
@@ -48,9 +53,30 @@
     ]
   },
   "eslintConfig": {
-    "extends": "airbnb-base",
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
     "rules": {
-      "max-len": "off"
+      "no-param-reassign": "off",
+      "prettier/prettier": [
+        "error"
+      ]
     }
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "endOfLine": "lf",
+    "printWidth": 80,
+    "quoteProps": "consistent",
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "useTabs": false
   }
 }
