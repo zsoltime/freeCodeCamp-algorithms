@@ -1,30 +1,13 @@
 {
   "name": "freecodecamp-algos",
   "version": "0.1.0",
+  "private": true,
   "description": "My freeCodeCamp algorithm solutions",
-  "main": "index.js",
   "scripts": {
     "test:basic": "ava basic/*.test.js --verbose",
     "test:intermediate": "ava intermediate/*.test.js --verbose",
     "test:advanced": "ava advanced/*.test.js --verbose",
     "test": "ava --verbose --watch"
-  },
-  "ava": {
-    "require": "babel-register",
-    "babel": "inherit",
-    "files": [ "**/*.test.js" ]
-  },
-  "babel": {
-    "presets": [
-      [ "env", { "targets": { "node":  "current" } } ]
-    ]
-  },
-  "eslintConfig": {
-    "extends": "airbnb-base"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zsoltime/freeCodeCamp-algorithms.git"
   },
   "keywords": [
     "freecodecamp"
@@ -35,10 +18,39 @@
     "url": "https://github.com/zsoltime/freeCodeCamp-algorithms/issues"
   },
   "homepage": "https://github.com/zsoltime/freeCodeCamp-algorithms#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zsoltime/freeCodeCamp-algorithms.git"
+  },
   "devDependencies": {
-    "ava": "^0.22.0",
-    "eslint": "^4.9.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0"
+    "@babel/preset-env": "^7.7.6",
+    "@babel/register": "^7.7.4",
+    "ava": "^2.4.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  },
+  "ava": {
+    "require": [
+      "./setup.js"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "rules": {
+      "max-len": "off"
+    }
   }
 }
