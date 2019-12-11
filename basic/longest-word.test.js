@@ -8,5 +8,10 @@ test('should return a number', (t) => {
 test('should return the length of the longest word', (t) => {
   t.is(longest('The quick brown fox jumped over the lazy dog'), 6);
   t.is(longest('May the force be with you'), 5);
-  t.is(longest('What if we try a super-long word such as otorhinolaryngology'), 19);
+  t.is(
+    longest(
+      'What if we try a super-long word such as otorhinolaryngology',
+    ),
+    19,
+  );
 });

@@ -9,4 +9,5 @@ test('should return the lowest index at which a value should be inserted into an
   t.is(getIndex([1, 2, 3, 4], 1.5), 1);
   t.is(getIndex([3, 10, 5], 3), 0);
   t.is(getIndex([2, 5, 10], 15), 3);
+  t.is(getIndex([], 3), 0);
 });

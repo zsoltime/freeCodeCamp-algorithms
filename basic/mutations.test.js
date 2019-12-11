@@ -13,8 +13,10 @@ test('should return true if all of the letters in the second string are present 
 
 test('should be case-insensitive', (t) => {
   t.true(isMutation(['Mary', 'army']));
+  t.true(isMutation(['Noel', 'Ole']));
 });
 
 test('should return false if the first string does not contain every character from the second', (t) => {
   t.false(isMutation(['hello', 'hey']));
+  t.false(isMutation(['voodoo', 'no']));
 });
