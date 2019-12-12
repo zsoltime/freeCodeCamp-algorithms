@@ -1,6 +1,9 @@
+// Find the missing letter in the passed letter range and
+// return it. If all letters are present in the range,
+// return undefined.
+
 export default function missingLetter(str) {
-  // eslint-disable-next-line no-plusplus
-  for (let i = 1; i < str.length; i++) {
+  for (let i = 1; i < str.length; i += 1) {
     const next = str.charCodeAt(i - 1) + 1;
 
     if (str.charCodeAt(i) !== next) {

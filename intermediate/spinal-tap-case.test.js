@@ -10,4 +10,5 @@ test('should convert string to spinal case, lowercase-words-joined-by-dashes', (
   t.is(convert('thisIsSpinalTap'), 'this-is-spinal-tap');
   t.is(convert('The_Andy_Griffith_Show'), 'the-andy-griffith-show');
   t.is(convert('Teletubbies say Eh-oh'), 'teletubbies-say-eh-oh');
+  t.is(convert('AllThe-small Things'), 'all-the-small-things');
 });
