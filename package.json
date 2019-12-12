@@ -6,7 +6,7 @@
   "scripts": {
     "format": "prettier --write \"**/*.js\"",
     "lint": "eslint advanced basic intermediate",
-    "test": "ava --verbose --watch",
+    "test": "ava",
     "test:advanced": "ava advanced/*.test.js --verbose",
     "test:basic": "ava basic/*.test.js --verbose",
     "test:intermediate": "ava intermediate/*.test.js --verbose"
@@ -71,7 +71,7 @@
     "arrowParens": "always",
     "bracketSpacing": true,
     "endOfLine": "lf",
-    "printWidth": 80,
+    "printWidth": 70,
     "quoteProps": "consistent",
     "semi": true,
     "singleQuote": true,
