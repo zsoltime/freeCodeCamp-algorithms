@@ -1,4 +1,9 @@
-function permutations(str) {
+// Return the number of total permutations of the provided
+// string that don't have repeated consecutive letters.
+// Assume that all characters in the provided string are
+// each unique.
+
+export function permutations(str) {
   const array = str.split('');
   const result = [];
 
@@ -14,9 +19,10 @@ function permutations(str) {
     }
   }
   permute(array);
+
   return result;
 }
 
 export default function permAlone(str) {
-  return permutations(str).filter(s => !/(\w)\1+/.test(s)).length;
+  return permutations(str).filter((s) => !/(\w)\1+/.test(s)).length;
 }
